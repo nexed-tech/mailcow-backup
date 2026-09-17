@@ -24,6 +24,10 @@ require_var SFTP_HOST SFTP_PORT SFTP_USER SFTP_TARGET_DIR SFTP_SSH_KEY_FILE \
             BACKUP_RETENTION_DAYS
 require_cmd rclone flock
 
+# mailcow's backup_and_restore.sh reads this from the environment to skip
+# its interactive "where should the backup be stored?" prompt.
+export MAILCOW_BACKUP_LOCATION
+
 # Prevent two runs from overlapping (e.g. a slow backup still running when
 # cron fires again).
 LOCKFILE="$CURRENTDIR/.mailcow-backup.lock"
