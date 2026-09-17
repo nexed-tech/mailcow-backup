@@ -1,0 +1,5 @@
+mailcow-backup.env
+.ssh/
+logs/*.log
+backups/*
+.mailcow-backup.lock
